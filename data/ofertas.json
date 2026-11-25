@@ -1,4 +1,23 @@
 {
   "atualizadoEm": "2026-11-25",
-  "ofertas": []
+  "ofertas": [
+    {
+      "id": "agratto-lcst18f-02i-18000",
+      "titulo": "Ar Condicionado HW Inverter Agratto LCST18F-02I 18000 Btus Frio",
+      "marca": "Agratto",
+      "tipo": "Split Inverter",
+      "btus": 18000,
+      "voltagem": "220V",
+      "preco": 3466.13,
+      "precoOriginal": 4800,
+      "parcelas": "12x de R$ 333,15",
+      "loja": "Mercado Livre (LCG Eletro, loja oficial)",
+      "link": "https://meli.la/1Jm2K2Q",
+      "imagem": "https://http2.mlstatic.com/D_NQ_NP_2X_787335-MLA99457412316_112025-F.webp",
+      "selo": "Mais vendido",
+      "destaque": true,
+      "tags": ["Inverter", "Só frio", "Desumidificação", "Loja oficial"],
+      "descricao": "Split hi-wall inverter de 18.000 BTUs, só frio, com função desumidificação. Vendido pela loja oficial LCG Eletro, com devolução grátis em até 30 dias e nota 4,9 em mais de 460 avaliações."
+    }
+  ]
 }
