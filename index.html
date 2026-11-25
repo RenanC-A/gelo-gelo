@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gelo gelo — Ofertas de ar-condicionado</title>
+  <meta name="description" content="As melhores ofertas e promoções de ar-condicionado: split, inverter, janela e portátil. Filtre por BTUs, tipo e preço.">
+  <meta name="theme-color" content="#eaf4fb">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230b6fa4'/%3E%3Cpath d='M16 6v20M7.3 11l17.4 10M7.3 21l17.4-10' stroke='%23fff' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+  <header class="topo">
+    <div class="container topo__inner">
+      <a class="marca" href="./" aria-label="Gelo gelo — início">
+        <svg class="marca__icone" viewBox="0 0 32 32" aria-hidden="true">
+          <rect width="32" height="32" rx="9"/>
+          <path d="M16 6v20M7.3 11l17.4 10M7.3 21l17.4-10" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/>
+        </svg>
+        <span class="marca__nome">Gelo gelo</span>
+      </a>
+      <p class="topo__frase">Ofertas de ar-condicionado, sem enrolação.</p>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="filtros" aria-label="Busca e filtros">
+      <div class="busca">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input id="busca" type="search" placeholder="Buscar por marca, modelo ou característica…" autocomplete="off" aria-label="Buscar ofertas">
+      </div>
+
+      <div class="filtros__linha">
+        <div class="grupo" role="group" aria-label="Filtrar por BTUs">
+          <span class="grupo__rotulo">BTUs</span>
+          <div id="chips-btus" class="chips"></div>
+        </div>
+
+        <div class="selects">
+          <label class="campo">
+            <span>Tipo</span>
+            <select id="filtro-tipo"><option value="">Todos</option></select>
+          </label>
+          <label class="campo">
+            <span>Preço</span>
+            <select id="filtro-preco">
+              <option value="">Qualquer</option>
+              <option value="0-1500">Até R$ 1.500</option>
+              <option value="1500-2500">R$ 1.500 a R$ 2.500</option>
+              <option value="2500-4000">R$ 2.500 a R$ 4.000</option>
+              <option value="4000-">Acima de R$ 4.000</option>
+            </select>
+          </label>
+          <label class="campo">
+            <span>Ordenar</span>
+            <select id="filtro-ordem">
+              <option value="destaque">Destaques</option>
+              <option value="desconto">Maior desconto</option>
+              <option value="menor">Menor preço</option>
+              <option value="maior">Maior preço</option>
+            </select>
+          </label>
+        </div>
+      </div>
+
+      <div class="filtros__rodape">
+        <p id="contador" class="contador" aria-live="polite"></p>
+        <button id="limpar" class="link-btn" type="button" hidden>Limpar filtros</button>
+      </div>
+    </section>
+
+    <section id="grade" class="grade" aria-live="polite" aria-busy="true"></section>
+
+    <p id="vazio" class="vazio" hidden>
+      Nenhuma oferta encontrada com esses filtros.<br>
+      <button class="link-btn" type="button" id="vazio-limpar">Limpar filtros</button>
+    </p>
+
+    <p id="erro" class="vazio" hidden></p>
+  </main>
+
+  <footer class="rodape">
+    <div class="container">
+      <p>Alguns links são de afiliados: se você comprar por eles, podemos receber uma pequena comissão, sem custo extra para você.</p>
+      <p>Preços e disponibilidade podem mudar a qualquer momento — confira sempre na loja. <span id="atualizado"></span></p>
+      <p class="rodape__assinatura">© <span id="ano"></span> Gelo gelo</p>
+    </div>
+  </footer>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>
