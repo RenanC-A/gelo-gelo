@@ -18,6 +18,23 @@
       "destaque": true,
       "tags": ["Inverter", "Só frio", "Desumidificação", "Loja oficial"],
       "descricao": "Split hi-wall inverter de 18.000 BTUs, só frio, com função desumidificação. Vendido pela loja oficial LCG Eletro, com devolução grátis em até 30 dias e nota 4,9 em mais de 460 avaliações."
+    },
+    {
+      "id": "midea-ai-airvolution-18000",
+      "titulo": "Ar Condicionado Split Midea AI Airvolution 18.000 BTUs Frio",
+      "marca": "Midea",
+      "tipo": "Split Inverter",
+      "btus": 18000,
+      "voltagem": "220V",
+      "preco": 3191.05,
+      "precoOriginal": 3359,
+      "parcelas": "R$ 3.359 em outros meios de pagamento",
+      "loja": "Mercado Livre",
+      "link": "https://meli.la/1RPVT2N",
+      "imagem": "https://http2.mlstatic.com/D_NQ_NP_2X_658307-MLA120148293886_112026-F.webp",
+      "selo": "5% OFF no Pix",
+      "tags": ["Inverter", "Só frio", "Preço no Pix"],
+      "descricao": "Split de 18.000 BTUs, só frio, da linha AI Airvolution da Midea. O preço de R$ 3.191,05 vale para pagamento no Pix; nos demais meios, o valor é R$ 3.359."
     }
   ]
 }
