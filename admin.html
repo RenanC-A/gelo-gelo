@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Admin — Gelo gelo</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230b6fa4'/%3E%3Cpath d='M16 6v20M7.3 11l17.4 10M7.3 21l17.4-10' stroke='%23fff' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/admin.css">
+</head>
+<body>
+
+  <header class="topo">
+    <div class="container topo__inner">
+      <a class="marca" href="./" aria-label="Gelo gelo — voltar ao site">
+        <svg class="marca__icone" viewBox="0 0 32 32" aria-hidden="true">
+          <rect width="32" height="32" rx="9"/>
+          <path d="M16 6v20M7.3 11l17.4 10M7.3 21l17.4-10" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/>
+        </svg>
+        <span class="marca__nome">Gelo gelo</span>
+      </a>
+      <p class="topo__frase">Painel de ofertas · <a href="./">ver site</a></p>
+    </div>
+  </header>
+
+  <main class="container admin">
+
+    <p class="aviso">
+      Esta página <strong>não salva sozinha</strong>: ela monta o arquivo <code>ofertas.json</code>.
+      Depois de adicionar as ofertas, clique em <strong>Baixar</strong> (ou <strong>Copiar</strong>) e substitua <code>data/ofertas.json</code> no repositório.
+    </p>
+
+    <div class="admin__colunas">
+
+      <!-- ===== Formulário ===== -->
+      <section class="painel">
+        <h2 id="form-titulo">Nova oferta</h2>
+
+        <form id="form" autocomplete="off" novalidate>
+          <div class="f f--full">
+            <label for="titulo">Título *</label>
+            <input id="titulo" required placeholder="Ar Condicionado Split Inverter 12.000 BTUs Frio">
+            <small>BTUs, tipo e marca são preenchidos sozinhos quando possível.</small>
+          </div>
+
+          <div class="f">
+            <label for="marca">Marca</label>
+            <input id="marca" placeholder="Midea">
+          </div>
+          <div class="f">
+            <label for="tipo">Tipo</label>
+            <input id="tipo" list="tipos" placeholder="Split Inverter">
+            <datalist id="tipos">
+              <option value="Split Inverter"><option value="Split Convencional">
+              <option value="Janela"><option value="Portátil"><option value="Cassete"><option value="Piso Teto">
+            </datalist>
+          </div>
+
+          <div class="f">
+            <label for="btus">BTUs</label>
+            <input id="btus" inputmode="numeric" placeholder="12000">
+          </div>
+          <div class="f">
+            <label for="voltagem">Voltagem</label>
+            <input id="voltagem" list="voltagens" placeholder="220V">
+            <datalist id="voltagens"><option value="127V"><option value="220V"><option value="Bivolt"></datalist>
+          </div>
+
+          <div class="f">
+            <label for="preco">Preço atual (R$) *</label>
+            <input id="preco" inputmode="decimal" required placeholder="3.466,13">
+          </div>
+          <div class="f">
+            <label for="precoOriginal">Preço de comparação (R$)</label>
+            <input id="precoOriginal" inputmode="decimal" placeholder="4.800,00">
+            <small>Preço riscado ou média de 30 dias.</small>
+          </div>
+
+          <div class="f f--full">
+            <label for="link">Link de afiliado *</label>
+            <input id="link" type="url" required placeholder="https://meli.la/...">
+          </div>
+
+          <div class="f f--full">
+            <label for="imagem">URL da imagem</label>
+            <input id="imagem" type="url" placeholder="https://http2.mlstatic.com/....webp">
+            <div id="previa" class="previa" hidden><img alt="Prévia da imagem"></div>
+          </div>
+
+          <div class="f">
+            <label for="parcelas">Parcelamento</label>
+            <input id="parcelas" placeholder="12x de R$ 333,15">
+          </div>
+          <div class="f">
+            <label for="loja">Loja</label>
+            <input id="loja" value="Mercado Livre">
+          </div>
+
+          <div class="f">
+            <label for="selo">Selo</label>
+            <input id="selo" placeholder="Frete grátis">
+          </div>
+          <div class="f">
+            <label for="validade">Válida até</label>
+            <input id="validade" type="date">
+          </div>
+
+          <div class="f f--full">
+            <label for="tags">Tags (separadas por vírgula)</label>
+            <input id="tags" placeholder="Inverter, Só frio, Wi-Fi">
+          </div>
+
+          <div class="f f--full">
+            <label for="descricao">Descrição</label>
+            <textarea id="descricao" rows="3" placeholder="Texto curto ou longo."></textarea>
+          </div>
+
+          <label class="check f--full"><input type="checkbox" id="destaque"> Destacar (aparece primeiro na ordenação padrão)</label>
+
+          <p id="resumo" class="resumo f--full" aria-live="polite"></p>
+          <p id="erro-form" class="erro-form f--full" role="alert" hidden></p>
+
+          <div class="acoes f--full">
+            <button class="botao botao--btn" type="submit" id="btn-salvar">Adicionar à lista</button>
+            <button class="botao botao--sec" type="button" id="btn-cancelar" hidden>Cancelar edição</button>
+            <button class="botao botao--sec" type="button" id="btn-limpar-form">Limpar campos</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- ===== Lista e saída ===== -->
+      <section class="painel">
+        <h2>Ofertas <span id="qtd" class="qtd"></span></h2>
+        <p id="status" class="status" aria-live="polite"></p>
+        <ul id="lista" class="lista"></ul>
+
+        <h2 class="h2-sep">Arquivo final</h2>
+        <textarea id="saida" class="saida" rows="10" readonly spellcheck="false" aria-label="Conteúdo do ofertas.json"></textarea>
+        <div class="acoes">
+          <button class="botao botao--btn" type="button" id="btn-copiar">Copiar</button>
+          <button class="botao botao--sec" type="button" id="btn-baixar">Baixar ofertas.json</button>
+        </div>
+        <p class="dica">Dica: o rascunho fica salvo neste navegador. Para recomeçar a partir do que está publicado, use <button class="link-btn" type="button" id="btn-recarregar">recarregar do site</button>.</p>
+      </section>
+    </div>
+  </main>
+
+  <script src="assets/admin.js"></script>
+</body>
+</html>
