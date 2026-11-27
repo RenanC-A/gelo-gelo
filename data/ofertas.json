@@ -1,6 +1,26 @@
 {
-  "atualizadoEm": "2026-11-25",
+  "atualizadoEm": "2026-11-26",
   "ofertas": [
+    {
+      "id": "ar-condicionado-split-midea-lite-invt-12000-btus-frio-220v",
+      "titulo": "Ar Condicionado Split Midea Lite Invt 12000 Btus Frio 220v",
+      "marca": "Midea",
+      "tipo": "Split Inverter",
+      "btus": 12000,
+      "voltagem": "220V",
+      "preco": 1975.05,
+      "precoOriginal": 2399,
+      "parcelas": "10x  R$ 207,90",
+      "loja": "Mercado Livre",
+      "link": "https://meli.la/193XfzR",
+      "imagem": "https://http2.mlstatic.com/D_NQ_NP_2X_978764-MLB119695464012_112026-F-ar-condicionado-split-midea-lite-invt-12000-btus-frio-220v.webp",
+      "tags": [
+        "Ar e Ventilação",
+        "Ares Condicionados",
+        "Inverter"
+      ],
+      "descricao": "Ar-Condicionado Split 12.000 BTUs Inverter Lite Frio Midea - Tecnologia Inverter com Brisa Indireta e função Siga-me para uma climatização eficiente e confortável"
+    },
     {
       "id": "agratto-lcst18f-02i-18000",
       "titulo": "Ar Condicionado HW Inverter Agratto LCST18F-02I 18000 Btus Frio",
@@ -16,7 +36,12 @@
       "imagem": "https://http2.mlstatic.com/D_NQ_NP_2X_787335-MLA99457412316_112025-F.webp",
       "selo": "Mais vendido",
       "destaque": true,
-      "tags": ["Inverter", "Só frio", "Desumidificação", "Loja oficial"],
+      "tags": [
+        "Inverter",
+        "Só frio",
+        "Desumidificação",
+        "Loja oficial"
+      ],
       "descricao": "Split hi-wall inverter de 18.000 BTUs, só frio, com função desumidificação. Vendido pela loja oficial LCG Eletro, com devolução grátis em até 30 dias e nota 4,9 em mais de 460 avaliações."
     },
     {
@@ -33,7 +58,11 @@
       "link": "https://meli.la/1RPVT2N",
       "imagem": "https://http2.mlstatic.com/D_NQ_NP_2X_658307-MLA120148293886_112026-F.webp",
       "selo": "5% OFF no Pix",
-      "tags": ["Inverter", "Só frio", "Preço no Pix"],
+      "tags": [
+        "Inverter",
+        "Só frio",
+        "Preço no Pix"
+      ],
       "descricao": "Split de 18.000 BTUs, só frio, da linha AI Airvolution da Midea. O preço de R$ 3.191,05 vale para pagamento no Pix; nos demais meios, o valor é R$ 3.359."
     }
   ]
